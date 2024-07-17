@@ -1,3 +1,5 @@
+\c cc_db
+
 CREATE TABLE "User" (
     id UUID PRIMARY KEY,
     username VARCHAR NOT NULL,
