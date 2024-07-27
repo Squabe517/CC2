@@ -1,0 +1,16 @@
+<!-- menu_confirm_delete.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Menu</title>
+</head>
+<body>
+    <h1>Delete Menu</h1>
+    <p>Are you sure you want to delete the menu "{{ menu.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm</button>
+        <a href="{% url 'get_menus' %}">Cancel</a>  <!-- Assuming you have a view named 'menu_list' -->
+    </form>
+</body>
+</html>

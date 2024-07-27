@@ -1,0 +1,18 @@
+<!-- templates/menu.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menus</title>
+</head>
+<body>
+    <h1>Menus</h1>
+    <ul>
+        {% for menu in menus %}
+        <li>
+            <a href="{% url 'get_menu' menu.pk %}">{{ menu.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_menu' %}">Create New Menu</a>
+</body>
+</html>

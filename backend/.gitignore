@@ -12,3 +12,8 @@ __pycache__/
 # Ignore Django migration files
 **/migrations/*.py
 **/migrations/*.pyc
+
+# Ignore Documentation
+source/
+make.bat
+Makefile
