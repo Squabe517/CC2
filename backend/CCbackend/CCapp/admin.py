@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import (
     Analytics,
+    Category,
     Item,
     ItemAnalytics,
     ItemModifier,
@@ -18,6 +19,12 @@ from .models import (
 class AnalyticsAdmin(admin.ModelAdmin):
     list_display = ('id', 'order', 'user', 'action', 'timestamp')
     search_fields = ('action',)
+    
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+    search_fields = ('name',)
+    
 
 @admin.register(Item)
 class ItemAdmin(admin.ModelAdmin):
@@ -36,7 +43,7 @@ class ItemModifierAdmin(admin.ModelAdmin):
 
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'item')
+    list_display = ('id', 'name')
     search_fields = ('name',)
 
 @admin.register(Modifier)

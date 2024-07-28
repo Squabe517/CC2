@@ -5,11 +5,32 @@
     <title>Menu</title>
 </head>
 <body>
-    <h1>Menu</h1>
+    <h1>{{ menu.name }}</h1>
+    <h3>Categories</h3>
     <ul>
-        <p>{{ menu.name }}</p>
+        {% for category in categories %}
+        <li>
+            <a href="#">{{ category.name }}</a>
+        </li>
+        {% endfor %}
     </ul>
-    <a href="{% url 'menu_delete' menu.pk %}">Delete Menu</a>
-    <a href="{% url 'get_menus' %}">See Menus</a>
+
+    <h3>Items</h3>
+    <ul>
+        {% for item in items %}
+        <li>
+            <a href="#">{{ item.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <hr></hr>
+    
+    <ul>
+        <li><a href="{% url 'menu_delete' menu.pk %}">Delete Menu</a></li>
+        <li><a href="{% url 'add_category' menu.pk %}">Add Category</a></li>
+        <li><a href="{% url 'add_item' menu.pk %}">Add Item</a></li>
+        <li><a href="{% url 'get_menus' %}">See Menus</a></li>
+    </ul>
 </body>
 </html>
